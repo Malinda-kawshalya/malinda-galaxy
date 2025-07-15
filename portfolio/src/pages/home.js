@@ -317,80 +317,174 @@ export default function Home() {
       {/* Use client-side only GSAP component */}
       {isMounted && <GSAPComponent />}
 
-      {/* About Section */}
-      <section className="about-section section" id="about">
-        <div className="container">
-          <motion.div
-            className="section-title"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2>
-              <span className="title-accent">{'<'}</span> About Me{' '}
-              <span className="title-accent">{'/>'}</span>
-            </h2>
-          </motion.div>
+{/* About Section */}
+<section className="about-section section" id="about">
+  <div className="cosmic-particles-bg"></div>
+  <div className="orbit-ring orbit-ring-1"></div>
+  <div className="orbit-ring orbit-ring-2"></div>
+  
+  <div className="container">
+    <motion.div
+      className="section-title"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <h2>
+        <span className="title-accent">{'<'}</span> About Me{' '}
+        <span className="title-accent">{'/>'}</span>
+      </h2>
+    </motion.div>
 
-          <div className="about-content">
-            <motion.div
-              className="about-text"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+    <div className="about-content">
+      <motion.div
+        className="about-text"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <motion.div 
+          className="code-block"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.4 }}
+        >
+          <div className="code-header">
+            <span className="code-dot"></span>
+            <span className="code-dot"></span>
+            <span className="code-dot"></span>
+            <span className="code-title">about.js</span>
+          </div>
+          <div className="code-content">
+            <p className="code-line">
+              <span className="code-keyword">const</span> <span className="code-variable">developer</span> = {'{'} 
+            </p>
+            <p className="code-line">
+              <span className="code-property">  name:</span> <span className="code-string">"Malinda Kawshalya"</span>,
+            </p>
+            <p className="code-line">
+              <span className="code-property">  role:</span> <span className="code-string">"Full Stack Developer"</span>,
+            </p>
+            <p className="code-line">
+              <span className="code-property">  mission:</span> <span className="code-string">"Creating elegant, functional applications"</span>
+            </p>
+            <p className="code-line">{'};'}</p>
+            
+            <p className="code-comment">// My journey through the digital cosmos</p>
+            
+            <p className="code-line">
+              Greetings, digital explorer! I&apos;m{' '}
+              <span className="highlight">Malinda Kawshalya</span>, a full stack developer  
+              charting bold paths across the front-end and back-end galaxies.
+            </p>
+            <p className="code-line">
+              My mission: to engineer dynamic, user-driven web applications that merge elegant design  
+              with powerful functionality — from seamless UIs to secure, scalable systems.
+            </p>
+            <p className="code-line">
+              When I&apos;m not coding across the stack, I&apos;m experimenting with new frameworks,  
+              contributing to innovative projects, or fine-tuning the future one feature at a time.
+            </p>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        className="about-image-container"
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
+        <div className="profile-frame">
+          <div className="profile-glow"></div>
+          <div className="profile-image-wrapper">
+            <Image 
+              src="/images/profile.jpg" 
+              alt="Profile" 
+              className="profile-image"
+              width={300} 
+              height={300}
+              priority
+            />
+          </div>
+          
+          <div className="tech-orbit">
+            <motion.div 
+              className="tech-planet p1"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
             >
-<p>
-  Greetings, digital explorer! I&apos;m{' '}
-  <span className="highlight">Malinda Kawshalya</span>, a full stack developer  
-  charting bold paths across the front-end and back-end galaxies.
-</p>
-<p>
-  My mission: to engineer dynamic, user-driven web applications that merge elegant design  
-  with powerful functionality — from seamless UIs to secure, scalable systems.
-</p>
-<p>
-  When I’m not coding across the stack, I’m experimenting with new frameworks,  
-  contributing to innovative projects, or fine-tuning the future one feature at a time.
-</p>
-
+              <span>JavaScript</span>
             </motion.div>
-
-            <motion.div
-              className="about-image"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+            <motion.div 
+              className="tech-planet p2"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
             >
-
-  <div className="profile-image-placeholder">
-<Image 
-  src="/images/profile.jpg" 
-  alt="Profile" 
-  className="profile-image"
-  width={300} 
-  height={300}
-  priority
-/>
-                <div className="tech-orbit">
-                  <div className="tech-planet p1">
-                    <span>Java Script</span>
-                  </div>
-                  <div className="tech-planet p2">
-                    <span>JS</span>
-                  </div>
-                  <div className="tech-planet p3">
-                    <span>Flutter</span>
-                  </div>
-                  <div className="tech-planet p4">
-                    <span>Java </span>
-                  </div>
-                  
-                </div>
-              </div>
+              <span>React</span>
+            </motion.div>
+            <motion.div 
+              className="tech-planet p3"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 1.0 }}
+            >
+              <span>Flutter</span>
+            </motion.div>
+            <motion.div 
+              className="tech-planet p4"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 1.2 }}
+            >
+              <span>Java</span>
+            </motion.div>
+            <motion.div 
+              className="tech-planet p5"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 1.4 }}
+            >
+              <span>Node.js</span>
             </motion.div>
           </div>
         </div>
-      </section>
+        
+        <div className="cosmic-stats">
+          <motion.div 
+            className="stat-item"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.0 }}
+          >
+            <div className="stat-value">2+</div>
+            <div className="stat-label">Years Experience</div>
+          </motion.div>
+          <motion.div 
+            className="stat-item"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
+          >
+            <div className="stat-value">15+</div>
+            <div className="stat-label">Projects</div>
+          </motion.div>
+          <motion.div 
+            className="stat-item"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.4 }}
+          >
+            <div className="stat-value">10+</div>
+            <div className="stat-label">Technologies</div>
+          </motion.div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
       {/* Skills Section */}
       <section className="skills-section section" id="skills">
