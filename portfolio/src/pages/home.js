@@ -420,11 +420,11 @@ export default function Home() {
           <div className="profile-glow"></div>
           <div className="profile-image-wrapper">
             <Image 
-              src="/images/profile.jpg" 
+              src="/images/Malinda.jpg" 
               alt="Profile" 
               className="profile-image"
-              width={300} 
-              height={300}
+              width={200} 
+              height={200}
               priority
             />
           </div>
