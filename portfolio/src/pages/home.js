@@ -241,6 +241,7 @@ export default function Home() {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.3], [1, 0.8]);
   const titleY = useTransform(scrollYProgress, [0, 0.3], [0, -150]);
+  const backgroundOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.3, 0.2, 0.15, 0.1]);
   const mouse = useRef({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -275,12 +276,32 @@ export default function Home() {
 
       {!isLoaded && <LoadingAnimation />}
 
+      {/* Full Page Animated Background */}
+      {isMounted && (
+        <motion.div 
+          className="page-background"
+          style={{ opacity: backgroundOpacity }}
+        >
+          <ThreeJSHero mouse={mouse} />
+        </motion.div>
+      )}
+
+      {/* Floating Space Decorations */}
+      {isMounted && (
+        <>
+          <div className="space-decoration stars-1"></div>
+          <div className="space-decoration stars-2"></div>
+          <div className="space-decoration stars-3"></div>
+          <div className="floating-planet planet-1"></div>
+          <div className="floating-planet planet-2"></div>
+        </>
+      )}
+
       {/* Hero Section */}
       <motion.section
         className="hero-section"
         style={{ opacity: heroOpacity, scale: heroScale }}
       >
-        {isMounted && <ThreeJSHero mouse={mouse} />}
 
         <div className="hero-content">
           <motion.div className="hero-text" style={{ y: titleY }}>
