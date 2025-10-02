@@ -46,5 +46,25 @@ export const projects = [
     image: "/images/barza.jpg",
     link: "/projects/astro-weather",
     tech: ["Flutter", "Firebase", ]
+  },
+
+    {
+    id: 7,
+    title: "Order Management System",
+    description: "Online Order Management Site based on QR codes",
+    image: "/images/customer.jpg",
+    link: "https://github.com/pahan1311/Business-Management",
+    tech: ["React", "Node.js", "MongoDB"]
+  }
+
+  ,
+
+    {
+    id: 8,
+    title: "Alphas Creative Website",
+    description: "Alphas Creative Official Website",
+    image: "/images/alphas.png",
+    link: "https://alphascreative.com/",
+    tech: ["React", "Node.js", "MongoDB"]
   }
 ];
